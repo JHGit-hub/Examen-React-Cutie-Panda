@@ -12,19 +12,33 @@ export default function StatsBar() {
             <div className="stat-row">
                 <img src={moodSVG} alt="humeur de Cutie" />
                 <div className="stat-bar">
-                    <div className="stat-level" style={{ width: `${mood}%` }}></div>
+                    <div className="stat-level" style={{
+                        width: `${mood}%`,
+                        backgroundColor: mood < 10 ? 'var(--danger-color)' :
+                                        mood > 10 && mood < 30 ? 'var(--warning-color)' :
+                                        'var(--primary-color)'
+                    }}></div>
                 </div>
             </div>
             <div className="stat-row">
                 <img src={energySVG} alt="énergie de Cutie" />
                 <div className="stat-bar">
-                    <div className="stat-level" style={{ width: `${energy}%` }}></div>
+                    <div className="stat-level" style={{
+                        width: `${energy}%`,
+                        backgroundColor: energy < 10 ? 'var(--danger-color)' :
+                                        energy > 10 && energy < 30 ? 'var(--warning-color)' :
+                                        'var(--primary-color)'
+                    }}></div>
                 </div>
             </div>
             <div className="stat-row">
                 <img src={moneySVG} alt="argent de Cutie" />
                 <div className="stat-bar">
-                    <div className="stat-level" style={{ width: `${money}%` }}></div>
+                    <div className="stat-level" style={{
+                        width: `${money}%`,
+                        backgroundColor: money < 10 ? 'var(--danger-color)' :
+                                        'var(--primary-color)'
+                    }}></div>
                 </div>
             </div>
         </div>
