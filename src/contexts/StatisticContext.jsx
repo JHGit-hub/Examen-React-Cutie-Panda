@@ -30,12 +30,16 @@ const StatisticContext = createContext();
 // On créé un provider
 export function StatisticProvider({ children }) {
 
-    // On créé un état pour chaque statistique, avec une valeur par defaut
+    // États des statistiques, avec une valeur de débnut de partie
     const [energy, setEnergy] = useState(100);
     const [mood, setMood] = useState(100);
     const [money, setMoney] = useState(50);
 
-    // Message d'alerte à afficher
+    // État du GameOver et message de fin de partie
+    const [gameOver, setGameOver] = useState(false);
+    const [gameOverMessage, setGameOverMessage] = useState("");
+
+    // États d'alerte
     const [alertMessage, setAlertMessage] = useState(null); // message d'alerte à afficher
     const [alertType, setAlertType] = useState(null);   // type d'alerte
 
@@ -90,15 +94,19 @@ export function StatisticProvider({ children }) {
         setEnergy(100);
         setMood(100);
         setMoney(50);
+        setGameOver(false);
+        setGameOverMessage("");
+        setAlertMessage(null);
+        setAlertType(null);
     }
 
     ////// Création des evenements aléatoires
     // On utilise un useEffect pour executer ce code au chargement du composant
     useEffect(() => {
+        // On créé la variable timeoutId pour arreter le timer lors du démontage
+        let timeoutId;
 
-        function getRandomEvent(){
-            // On créé la variable timeoutId pour arreter le timer lors du démontage
-            let timeoutId;
+        function getRandomEvent() {
 
             // On choisi un événement au hasard
             const randomEvent = alertMessages[Math.floor(Math.random() * alertMessages.length)];
@@ -142,8 +150,23 @@ export function StatisticProvider({ children }) {
 
     }, []) // dépendance vide car on veut que cela s'exécute qu'une seule fois au chargement
 
+
+    ////// Gestion du Gameover
+    useEffect(() => {
+        if (energy === 0) {
+            setGameOver(true); // On attribue "true" a Gameover qui servira de condition de fin de partie 
+            setGameOverMessage("Votre personnage s'est évanoui d’épuisement…");
+        } else if (mood === 0) {
+            setGameOver(true);
+            setGameOverMessage("Votre personnage est trop triste pour continuer…");
+        } else if (money === 0) {
+            setGameOver(true);
+            setGameOverMessage("Votre personnage fait faillite…");
+        }
+    }, [energy, mood, money]); // On surveille les changements des statistiques (dépendance) pour déclencher le GameOver
+
     return (
-        <StatisticContext.Provider value={{ energy, setEnergy, mood, setMood, money, setMoney, resetStats, Eat, Work, Sleep, Play }}>
+        <StatisticContext.Provider value={{ energy, setEnergy, mood, setMood, money, setMoney, resetStats, Eat, Work, Sleep, Play, alertMessage, alertType, gameOver,gameOverMessage }}>
             {children}
         </StatisticContext.Provider>
     );

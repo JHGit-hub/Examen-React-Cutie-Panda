@@ -1,6 +1,6 @@
-import CTAButton from "../components/cta";
 import HeaderBar from "../components/headerBar";
 import Happy from "../assets/images/happy.png";
+import PrimaryBtn from "../components/PrimaryBtn";
 
 export default function Start() {
 
@@ -13,7 +13,7 @@ export default function Start() {
             <div className="home">
                 <img src={Happy} alt="Happy Cutie" />
                 <p>Aide <span>Cutie Panda</span> à s’épanouir dans la vie, nourris le, fais le travailler, dormir et jouer, en évitant les embûches, <span>prêt ?</span></p>
-                <CTAButton label="Jouer" to="/game" />
+                <PrimaryBtn label="Jouer" to="/game" />
             </div>
         </div>
     );
