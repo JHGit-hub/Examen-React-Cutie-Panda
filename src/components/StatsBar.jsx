@@ -1,7 +1,7 @@
 import { useStatistic } from "../contexts/StatisticContext"
-import moodSVG from "../assets/icons/mood.png";
-import energySVG from "../assets/icons/energy.png";
-import moneySVG from "../assets/icons/money.png";
+import moodSVG from "../assets/icons/mood.svg";
+import energySVG from "../assets/icons/energy.svg";
+import moneySVG from "../assets/icons/money.svg";
 
 export default function StatsBar() {
 

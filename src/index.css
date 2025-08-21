@@ -6,22 +6,29 @@
     box-sizing: border-box;
 }
 
+body {
+    max-width: 500px;
+    height: 100vh;
+    background-color: var(--background-color);
+}
+
 /****** FONTS ******/
 
 @font-face {
     font-family: "inter-bold";
-    src: url(public/fonts/inter-bold.ttf);
+    src: url(public/fonts/inter_bold.ttf);
 }
 
 @font-face {
     font-family: "inter-regular";
-    src: url(public/fonts/inter-regular.ttf);
+    src: url(public/fonts/inter_regular.ttf);
 }
 
 h2 {
     font-family: "inter-bold";
     font-size: 1.125rem;
     text-transform: capitalize;
+    color: #ffffff;
 }
 
 h4 {
@@ -32,6 +39,7 @@ h4 {
 p {
     font-family: "inter-regular";
     font-size: 1.125rem;
+    text-align: center;
 }
 
 span {
@@ -39,86 +47,54 @@ span {
     font-size: 1.125rem;
 }
 
+a {
+    font-family: "inter-bold";
+    text-decoration: none;
+}
+
 
 /****** COLORS ******/
 
 :root {
-    --color-primary: #758478;
-    --color-background: #EEEADE;
-    --color-warning: #E7A05A;
-    --color-danger: #E75A5A;
+    --primary-color: #758478;
+    --background-color: #EEEADE;
+    --warning-color: #E7A05A;
+    --danger-color: #E75A5A;
 }
 
 
+/****** BUTTONS ******/
 
-
-/*
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.primary-btn {
+    background: var(--primary-color);
+    padding: 2rem 4rem;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 2rem;
+    margin-top: 3rem;
+    font-size: 1.125rem;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+.cta-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 1.5rem;
+    max-width: 400px;           /* ajuste selon ta page */
+    margin: 0 auto;
+    padding: 1rem;
+    height: 250px;              /* valeur qui force des gros boutons */
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;                /* prend toute la cellule */
+    height: 100%;               /* prend toute la cellule */
+    background-color: #758478;
+    color: #fff;
+    font-size: 1.125rem;
+    border-radius: 10px;
 }
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-}
-*/

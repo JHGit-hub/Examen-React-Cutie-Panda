@@ -1,6 +1,5 @@
 import HeaderBar from "../components/headerBar";
-import GameOver from "../assets/images/gameover.png";
-import PrimaryBtn from "../components/PrimaryBtn";
+import GameOverIllustration from "../assets/images/gameover.png";
 import { useNavigate } from "react-router"
 
 export default function GameOver() {
@@ -21,7 +20,7 @@ export default function GameOver() {
                 <HeaderBar />
             </div>
             <div className="home">
-                <img src={GameOver} alt="Game Over" />
+                <img src={GameOverIllustration} alt="Game Over" />
                 <p>{gameOverMessage}</p>
                 <button className="restart-btn" onClick={GameRestart}>Rejouer</button>
             </div>
