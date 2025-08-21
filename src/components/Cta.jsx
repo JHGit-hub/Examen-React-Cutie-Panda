@@ -1,4 +1,8 @@
+import { useStatistic } from "../contexts/StatisticContext"
+
 export default function Cta() {
+    
+    const { Eat, Sleep, Work, Play } = useStatistic();
 
     return (
         <div className="cta-grid">
