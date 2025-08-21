@@ -21,6 +21,7 @@
 h2 {
     font-family: "inter-bold";
     font-size: 1.125rem;
+    text-transform: capitalize;
 }
 
 h4 {

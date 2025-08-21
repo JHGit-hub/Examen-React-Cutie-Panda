@@ -1,4 +1,4 @@
-import default function GameOver() {
+export default function GameOver() {
 
     return (
         <div>
