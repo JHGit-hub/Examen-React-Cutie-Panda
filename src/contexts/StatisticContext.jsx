@@ -42,6 +42,7 @@ export function StatisticProvider({ children }) {
     // États d'alerte
     const [alertMessage, setAlertMessage] = useState(null); // message d'alerte à afficher
     const [alertType, setAlertType] = useState(null);   // type d'alerte
+    const [alertVisible, setAlertVisible] = useState(false);  // état d'affichage de l'alerte
 
     ////// Création des différentes fonctions du jeu
     function Eat() {
@@ -79,7 +80,14 @@ export function StatisticProvider({ children }) {
         // argent ne change pas
     }
 
-// mettre ici le code de test.jsx
+    // On utilise un useEffect pour executer ce code aprés le chargement du composant
+    useEffect(() => {
+        // Création de la constante degradation
+        // On utilise un setInterval pour diminuer les statistiques toutes les 10 secondes
+        const degradation = setInterval(degradeStats, 10000); // Toutes les 10 secondes
+
+        return () => clearInterval(degradation); // On arrete le timer de la dégradation lorsque la page est fermée (au démontage)
+    }, []); // Il n'y a pas de dépendances, donc cela ne s'exécute qu'au montage
 
 
     ////// Création de la function reset
@@ -110,6 +118,8 @@ export function StatisticProvider({ children }) {
             // On enregistre le message d'alerte et son type
             setAlertMessage(randomEvent.message);
             setAlertType(randomEvent.type);
+            setAlertVisible(true); // affiche l'alerte
+            setTimeout(() => { setAlertVisible(false)}, 3000); // on cache l'alerte au bout de 3 secondes
 
             // On applique l'effet selon l'evenement
             if (randomEvent.id === 1) {
@@ -159,7 +169,7 @@ export function StatisticProvider({ children }) {
     }, [energy, mood, money]); // On surveille les changements des statistiques (dépendance) pour déclencher le GameOver
 
     return (
-        <StatisticContext.Provider value={{ energy, setEnergy, mood, setMood, money, setMoney, resetStats, Eat, Work, Sleep, Play, alertMessage, alertType, gameOver,gameOverMessage }}>
+        <StatisticContext.Provider value={{ energy, setEnergy, mood, setMood, money, setMoney, resetStats, Eat, Work, Sleep, Play, alertMessage, alertType, alertVisible, gameOver, gameOverMessage }}>
             {children}
         </StatisticContext.Provider>
     );

@@ -1,6 +1,7 @@
 import HeaderBar from "../components/headerBar";
 import GameOverIllustration from "../assets/images/gameover.png";
 import { useNavigate } from "react-router"
+import { useStatistic } from "../contexts/StatisticContext";
 
 export default function GameOver() {
 
