@@ -38,17 +38,15 @@ export function StatisticProvider({ children }) {
 
     // État du GameOver et message de fin de partie
     const [gameOver, setGameOver] = useState(false);
-    const [gameOverMessage, setGameOverMessage] = useState("");
+    const [gameOverMessage, setGameOverMessage] = useState(null);
 
     // États d'alerte évenements aléatoires
     const [alertMessage, setAlertMessage] = useState(null); // message d'alerte à afficher
     const [alertType, setAlertType] = useState(null);   // type d'alerte
-    const [alertVisible, setAlertVisible] = useState(false);  // état d'affichage de l'alerte
+    const [alertVisible, setAlertVisible] = useState(false);  // état d'affichage de l'alerte (visible ou non)
 
-    // États d'alerte energie et humeur faible
-    const [lowStats, setLowStats] = useState({ energy: false, mood: false }); // on attribue false car au depart, les barres sont pleines
 
-    ////// Création des différentes fonctions du jeu
+////// Création des différentes fonctions du jeu
     function Eat() {
         // On change la valeur de l'energie en partant de sa valeur actuelle à laquelle on ajoute 20
         // Avec Math.min, on le fais selectionner la valeur la plus petite entre 100 (valeur max)
@@ -77,15 +75,16 @@ export function StatisticProvider({ children }) {
     }
 
 
-    ////// Création de la dégradation automatique des statistiques
+////// Création de la dégradation automatique des statistiques
     function degradeStats() {
         setEnergy(actualValue => Math.max(actualValue - 5, 0)); // Diminue l'énergie de 5, min 0
         setMood(actualValue => Math.max(actualValue - 5, 0)); // Diminue l'humeur de 5, min 0
         // argent ne change pas
     }
 
-    // On utilise un useEffect pour executer ce code aprés le chargement du composant
+    // Gestion de la dégradation automatique des statistiques avec un useEffect
     useEffect(() => {
+        // On utilise un useEffect pour executer ce code aprés le chargement du composant
         // Création de la constante degradation
         // On utilise un setInterval pour diminuer les statistiques toutes les 10 secondes
         const degradation = setInterval(degradeStats, 10000); // Toutes les 10 secondes
@@ -94,18 +93,19 @@ export function StatisticProvider({ children }) {
     }, []); // Il n'y a pas de dépendances, donc cela ne s'exécute qu'au montage
 
 
-    ////// Création de la function reset
+////// Création de la function reset
     function resetStats() {
         setEnergy(100);
         setMood(100);
         setMoney(50);
         setGameOver(false);
-        setGameOverMessage("");
+        setGameOverMessage(null);
         setAlertMessage(null);
         setAlertType(null);
+        setAlertVisible(false)
     }
 
-    ////// Création des evenements aléatoires
+////// Création des evenements aléatoires
     // On utilise un useEffect pour executer ce code au chargement du composant
     useEffect(() => {
         // On créé la variable timeoutId pour arreter le timer lors du démontage
@@ -127,7 +127,7 @@ export function StatisticProvider({ children }) {
 
             // On applique l'effet selon l'evenement
             if (randomEvent.id === 1) {
-                setMoney(moneyValue => Math.min(moneyValue + 20, 100)); // bonus: billet de 20€
+                setMoney(moneyValue => Math.min(moneyValue + 20, 100)); // bonus: billet de +20€
             } else if (randomEvent.id === 2) {
                 setMoney(moneyValue => Math.max(moneyValue - 30, 0)); // malus: loyer -30€
             } else if (randomEvent.id === 3) {
@@ -139,9 +139,9 @@ export function StatisticProvider({ children }) {
 
             // On relance le cycle avec un nouveau délai
 
-            const newRandomDelay = Math.floor(Math.random() * 30000) + 30000;
+            const newRandomDelay = Math.floor(Math.random() * 30001) + 30000;
             //  Math.random() génère un nombre aléatoire entre 0 et 1 que l'ont mulitpli par le délai minimun (30 secondes)
-            //  Math.random() * 30000) va donner un nombre compris entre 0 et 30000 (exclus)
+            //  Math.random() * 30001) va donner un nombre compris entre 0 et 30001 (exclus)
             //  On ajoute 30000 pour avoir le délai max 60 secondes
             //  Math.floor arrondit à l'entier inférieur
 
@@ -150,7 +150,7 @@ export function StatisticProvider({ children }) {
         }
 
         // Démarrage du cycle des évenements au montage du composant
-        const FirstRandomDelay = Math.floor(Math.random() * 30000) + 30000;
+        const FirstRandomDelay = Math.floor(Math.random() * 30001) + 30000;
         timeoutId = setTimeout(getRandomEvent, FirstRandomDelay);
 
         return () => clearTimeout(timeoutId); // pour arreter le timer au demontage du composant (sinon tourne en boucle)

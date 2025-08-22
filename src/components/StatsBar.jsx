@@ -36,14 +36,14 @@ export default function StatsBar() {
                         initial={false} // pas d'animation au départ
                         animate={{
                             width: `${mood}%`, // animation de la largeur
-                            backgroundColor: mood < 10
+                            backgroundColor: mood < 10 // animation sur la couleur
                                 ? ['var(--danger-color)', '#fdd4d4ff']
                                 : mood > 10 && mood < 30
                                     ? 'var(--warning-color)'
                                     : 'var(--primary-color)'
                         }} // animation de la largeur
                         transition={transition}
-                        style={{ width: `${mood}%` }}>
+                        style={{ width: `${mood}%` }}> 
                     </motion.div>
                 </div>
             </div>

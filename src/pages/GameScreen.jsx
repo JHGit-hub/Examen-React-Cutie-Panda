@@ -17,7 +17,7 @@ export default function Game() {
         if (gameOver) {
             navigate("/gameOver");
         }
-    }, [gameOver, navigate]);
+    }, [gameOver]);
 
     return (
         // Page de jeu
