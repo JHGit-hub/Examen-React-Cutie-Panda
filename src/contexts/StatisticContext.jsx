@@ -1,6 +1,6 @@
 import { useEffect, useState, createContext, useContext } from "react";
 
-// création de la constante alertMessages avec id, type et message
+// création de la constante alertMessages pour les événements avec id, type et message
 const alertMessages = [
     {
         id: 1,
@@ -24,6 +24,7 @@ const alertMessages = [
     }
 ];
 
+
 // On créé le contexte
 const StatisticContext = createContext();
 
@@ -39,10 +40,13 @@ export function StatisticProvider({ children }) {
     const [gameOver, setGameOver] = useState(false);
     const [gameOverMessage, setGameOverMessage] = useState("");
 
-    // États d'alerte
+    // États d'alerte évenements aléatoires
     const [alertMessage, setAlertMessage] = useState(null); // message d'alerte à afficher
     const [alertType, setAlertType] = useState(null);   // type d'alerte
     const [alertVisible, setAlertVisible] = useState(false);  // état d'affichage de l'alerte
+
+    // États d'alerte energie et humeur faible
+    const [lowStats, setLowStats] = useState({ energy: false, mood: false }); // on attribue false car au depart, les barres sont pleines
 
     ////// Création des différentes fonctions du jeu
     function Eat() {
@@ -119,7 +123,7 @@ export function StatisticProvider({ children }) {
             setAlertMessage(randomEvent.message);
             setAlertType(randomEvent.type);
             setAlertVisible(true); // affiche l'alerte
-            setTimeout(() => { setAlertVisible(false)}, 3000); // on cache l'alerte au bout de 3 secondes
+            setTimeout(() => { setAlertVisible(false) }, 3000); // on cache l'alerte au bout de 3 secondes
 
             // On applique l'effet selon l'evenement
             if (randomEvent.id === 1) {
@@ -167,6 +171,7 @@ export function StatisticProvider({ children }) {
             setGameOverMessage("Votre personnage fait faillite…");
         }
     }, [energy, mood, money]); // On surveille les changements des statistiques (dépendance) pour déclencher le GameOver
+
 
     return (
         <StatisticContext.Provider value={{ energy, setEnergy, mood, setMood, money, setMoney, resetStats, Eat, Work, Sleep, Play, alertMessage, alertType, alertVisible, gameOver, gameOverMessage }}>
