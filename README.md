@@ -38,8 +38,7 @@ Des événements aléatoires interviennent toutes les 30 à 60 s (gain ou pert
 - HTML
 - CSS
 
-## Document
-Schéma dsiponible dans public/documents
+## Schéma
 https://github.com/JHGit-hub/Examen-React-Cutie-Panda/blob/main/public/documents/Sch%C3%A9ma.jpg
 
 ## Maquette Figma
