@@ -1,12 +1,48 @@
-# React + Vite
+<h1 align="center">Welcome to cutie-panda 👋</h1>
+<p>
+  <img alt="Version" src="https://img.shields.io/badge/version-1.0-blue.svg?cacheSeconds=2592000" />
+  <a href="https://www.figma.com/design/TG876CKH8ZVi2VDGXnBbcI/cutie-panda--Copy-?node-id=3-2&t=wJew2G2rswf9IM8y-0" target="_blank">
+    <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" />
+  </a>
+</p>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> EXAMEN FINAL FRAMEWORK FRONT END
+## Project's Name
 
-Currently, two official plugins are available:
+Cutie Panda
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Description
 
-## Expanding the ESLint configuration
+On crée une application React où l’on gère la vie d’un personnage, avec pour objectif de maintenir ses statistiques en équilibre : énergie, humeur et argent. On peut effectuer différentes actions (travailler, dormir, s’amuser, manger) qui influencent ces stats, tout en faisant face à leur dégradation automatique toutes les 10 s.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Chaque action a ses avantages et inconvénients :
+
+- Quand on travaille, on gagne de l’argent mais on perd de l’énergie et de l’humeur.
+- Dormir restaure l’énergie mais peut faire baisser l’humeur.
+- S’amuser augmente l’humeur mais coûte de l’argent et fatigue un peu.
+- Manger redonne de l’énergie, coûte un peu et peut baisser l’humeur.
+
+La partie s’arrête si une statistique atteint zéro :
+
+- On s’évanouit si l’énergie tombe à zéro,
+- On devient trop triste si l’humeur est à zéro,
+- On fait faillite si on n’a plus d’argent.
+
+Des événements aléatoires interviennent toutes les 30 à 60 s (gain ou perte d’argent, invitations, maladie…). On démarre avec l'énergie à 100, l'humeur à 100 et l'argent à 50. Les couleurs des barres changent selon le niveau : orange sous 30, rouge et animation danger sous 10. On peut recommencer une partie après un game over.
+
+## Technologies utilisées
+
+- REACT dans environnement vite.js
+- REACT router
+- Framer motion
+- HTML
+- CSS
+
+## Maquette Figma
+https://www.figma.com/design/TG876CKH8ZVi2VDGXnBbcI/cutie-panda--Copy-?node-id=3-2&t=wJew2G2rswf9IM8y-0
+
+## Author
+
+👤 **julien - Promo 2025**
+
+* Github: [@JHGit-hub](https://github.com/JHGit-hub)
