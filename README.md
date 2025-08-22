@@ -38,8 +38,14 @@ Des événements aléatoires interviennent toutes les 30 à 60 s (gain ou pert
 - HTML
 - CSS
 
+## Document
+Schéma dsiponible dans public/documents
+
 ## Maquette Figma
 https://www.figma.com/design/TG876CKH8ZVi2VDGXnBbcI/cutie-panda--Copy-?node-id=3-2&t=wJew2G2rswf9IM8y-0
+
+## Cahier des charges
+https://www.notion.so/Examen-2025-Module-optionnel-Framework-Front-End-Cutie-Panda-comme-un-tamagotchi-256979c7ec068197b402fba395db86f5
 
 ## Developpeur
 
