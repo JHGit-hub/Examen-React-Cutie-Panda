@@ -40,6 +40,7 @@ Des événements aléatoires interviennent toutes les 30 à 60 s (gain ou pert
 
 ## Document
 Schéma dsiponible dans public/documents
+https://github.com/JHGit-hub/Examen-React-Cutie-Panda/blob/main/public/documents/Sch%C3%A9ma.jpg
 
 ## Maquette Figma
 https://www.figma.com/design/TG876CKH8ZVi2VDGXnBbcI/cutie-panda--Copy-?node-id=3-2&t=wJew2G2rswf9IM8y-0
