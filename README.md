@@ -7,7 +7,7 @@
 </p>
 
 > EXAMEN FINAL FRAMEWORK FRONT END
-## Project's Name
+## Nom du Projet
 
 Cutie Panda
 
@@ -41,7 +41,7 @@ Des événements aléatoires interviennent toutes les 30 à 60 s (gain ou pert
 ## Maquette Figma
 https://www.figma.com/design/TG876CKH8ZVi2VDGXnBbcI/cutie-panda--Copy-?node-id=3-2&t=wJew2G2rswf9IM8y-0
 
-## Author
+## Developpeur
 
 👤 **julien - Promo 2025**
 
