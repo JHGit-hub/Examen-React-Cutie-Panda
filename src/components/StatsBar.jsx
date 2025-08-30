@@ -36,9 +36,9 @@ export default function StatsBar() {
                         initial={false} // pas d'animation au départ
                         animate={{
                             width: `${mood}%`, // animation de la largeur
-                            backgroundColor: mood < 10 // animation sur la couleur
+                            backgroundColor: mood <= 10 // animation sur la couleur
                                 ? ['var(--danger-color)', '#fdd4d4ff']
-                                : mood > 10 && mood < 30
+                                : mood > 10 && mood <= 30
                                     ? 'var(--warning-color)'
                                     : 'var(--primary-color)'
                         }} // animation de la largeur
@@ -54,9 +54,9 @@ export default function StatsBar() {
                         initial={false} // pas d'animation au départ
                         animate={{
                             width: `${energy}%`, // animation de la largeur
-                            backgroundColor: energy < 10
+                            backgroundColor: energy <= 10
                                 ? ['var(--danger-color)', '#fdd4d4ff']
-                                : energy > 10 && energy < 30
+                                : energy > 10 && energy <= 30
                                     ? 'var(--warning-color)'
                                     : 'var(--primary-color)'
                         }} // animation de la largeur
@@ -74,7 +74,7 @@ export default function StatsBar() {
                         transition={{ duration: 0.8, ease: "easeInOut" }} // durée et type de transition
                         style={{
                             width: `${money}%`,
-                            backgroundColor: money < 10 ? 'var(--danger-color)' :
+                            backgroundColor: money <= 10 ? 'var(--danger-color)' :
                                 'var(--primary-color)'
                         }}></motion.div>
                 </div>
