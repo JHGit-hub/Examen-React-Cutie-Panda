@@ -44,6 +44,9 @@ https://github.com/JHGit-hub/Examen-React-Cutie-Panda/blob/main/public/documents
 ## Maquette Figma
 https://www.figma.com/design/TG876CKH8ZVi2VDGXnBbcI/cutie-panda--Copy-?node-id=3-2&t=wJew2G2rswf9IM8y-0
 
+## Installation
+Ce projet fonctionne avec la bibliothèque React. Pour lancer le projet, il faut donc utiliser la commande npm run dev dans le terminal.
+
 ## Cahier des charges
 https://www.notion.so/Examen-2025-Module-optionnel-Framework-Front-End-Cutie-Panda-comme-un-tamagotchi-256979c7ec068197b402fba395db86f5
 

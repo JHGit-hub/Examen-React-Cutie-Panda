@@ -1,6 +1,7 @@
 import { useEffect, useState, createContext, useContext } from "react";
 
 // création de la constante alertMessages pour les événements avec id, type et message
+// tableau d'objets
 const alertMessages = [
     {
         id: 1,
@@ -115,9 +116,10 @@ export function StatisticProvider({ children }) {
 
             // On choisi un événement au hasard
             const randomEvent = alertMessages[Math.floor(Math.random() * alertMessages.length)];
-            // On obtient un id au hasard en multipliant
+            // On obtient un index au hasard en multipliant
             // la longueur du tableau par un nombre au hasard entre 0 et 1 (exclus)
             // et on arrondi a l'entier inferieur
+            // on pioche dans le tableau alertMessages l'élément à l'index obtenu
 
             // On enregistre le message d'alerte et son type
             setAlertMessage(randomEvent.message);
