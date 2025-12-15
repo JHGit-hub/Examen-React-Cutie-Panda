@@ -1,4 +1,4 @@
-import CTAButton from "../components/CTA.jsx"
+import CTAButton from "../components/CTA-rename.jsx"
 import FlashAlert from "../components/FlashAlert"
 import HeaderBar from "../components/headerBar"
 import MoodState from "../components/MoodState"
