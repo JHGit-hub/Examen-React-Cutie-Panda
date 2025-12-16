@@ -7,15 +7,15 @@
 }
 
 body {
-    min-height: 100dvh;
-    display: flex;
-    justify-content: center;
     background-color: var(--background-color);
+    min-height: 100dvh;
+    margin: 0 auto;
 }
 
 #root {
     width: 100%;
     max-width: 500px;
+    margin: 0 auto;
 }
 
 /****** FONTS ******/
@@ -72,28 +72,26 @@ a {
 /****** BUTTONS ******/
 
 .primary-btn, .restart-btn {
-    width: 100%;
-    max-width: 280px;
-    padding: 1rem;
-    font-size: 1.125rem;
-    margin-top: 2rem;
-    text-align: center;
     background: var(--primary-color);
+    padding: 1rem 2rem;
     border: none;
     border-radius: 8px;
     color: white;
+    font-size: 1.125rem;
+    margin-top: 2rem;
+    width: 100%;
+    max-width: 320px;
+    text-align: center;
 }
 
 .cta-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    gap: 1.5rem;
+    gap: 1rem;
     width: 100%;
-    max-width: 360px;
+    max-width: 420px;
     margin: 0 auto;
     padding: 1rem;
-    height: auto;
 }
 
 .cta {
@@ -102,30 +100,32 @@ a {
     justify-content: center;
     width: 100%;
     height: 100%;
+    min-height: 64px;
     background-color: #758478;
     color: #fff;
     font-size: 1.125rem;
     border-radius: 10px;
 }
 
+
 /****** RESPONSIVE ******/
 
 @media (max-width: 480px) {
+    .header-bar {
+        margin: 1.5rem 0;
+        padding: 0 1rem;
+    }
 
-    h1 {
-        font-size: 1.8rem;
+    .home {
+        margin-top: 2rem;
     }
 
     p, span {
         font-size: 1rem;
     }
 
-    .header-bar {
-        margin: 1.5rem 0;
-        padding: 0 1rem;
-    }
-
-    .stat-container {
-        margin: 0.5rem;
+    .flash-message {
+        padding: 1rem;
+        font-size: 1rem;
     }
 }
