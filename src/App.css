@@ -17,17 +17,30 @@
     flex-direction: column;
     gap: 2rem;
     align-items: center;
-    margin-top: 6rem;
+    margin-top: 2rem;
     justify-content: center;
+    text-align: center;
 }
 
 .home img {
-    width: 70%;
+    width: 100%;
+    max-width: 280px;
+    height: auto;
 }
 
 .home p {
-    width: 70%;
-    text-align: center;
+    width: 100%;
+    max-width: 360px;
+    line-height: 1.5;
+}
+
+.page {
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    box-sizing: border-box;
 }
 
 /****** GAMEPAGE ******/
@@ -83,8 +96,8 @@
     width: 80vw;
 }
 
-.visible{
-    bottom:40px;
+.visible {
+    bottom: 40px;
     opacity: 1;
 }
 

@@ -7,9 +7,15 @@
 }
 
 body {
-    max-width: 500px;
-    height: 100vh;
+    min-height: 100dvh;
+    display: flex;
+    justify-content: center;
     background-color: var(--background-color);
+}
+
+#root {
+    width: 100%;
+    max-width: 500px;
 }
 
 /****** FONTS ******/
@@ -66,14 +72,16 @@ a {
 /****** BUTTONS ******/
 
 .primary-btn, .restart-btn {
+    width: 100%;
+    max-width: 280px;
+    padding: 1rem;
+    font-size: 1.125rem;
+    margin-top: 2rem;
+    text-align: center;
     background: var(--primary-color);
-    padding: 2rem 4rem;
     border: none;
     border-radius: 8px;
     color: white;
-    font-size: 2rem;
-    margin-top: 3rem;
-    font-size: 1.125rem;
 }
 
 .cta-grid {
@@ -81,10 +89,11 @@ a {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     gap: 1.5rem;
-    max-width: 400px;
+    width: 100%;
+    max-width: 360px;
     margin: 0 auto;
     padding: 1rem;
-    height: 250px;
+    height: auto;
 }
 
 .cta {
@@ -97,4 +106,26 @@ a {
     color: #fff;
     font-size: 1.125rem;
     border-radius: 10px;
+}
+
+/****** RESPONSIVE ******/
+
+@media (max-width: 480px) {
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    p, span {
+        font-size: 1rem;
+    }
+
+    .header-bar {
+        margin: 1.5rem 0;
+        padding: 0 1rem;
+    }
+
+    .stat-container {
+        margin: 0.5rem;
+    }
 }
